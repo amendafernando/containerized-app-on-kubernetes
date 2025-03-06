@@ -25,5 +25,11 @@ spec:
           value: "3306"
         - name: BACKGROUND_COLOR
           value: blue
+        - name: MYSQL_ROOT_PASSWORD
+          value: mypassword
+        - name: DBUSER
+          value: "root"
+        - name: DBPASSWORD
+          value: "mypassword" # MySQL password
         ports:
         - containerPort: 8080
