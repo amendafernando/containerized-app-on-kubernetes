@@ -19,6 +19,10 @@ spec:
       - name: webapp
         image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:latest
         env:
+        - name: DBHOST
+          value: mysql-service.mysql-namespace.svc.cluster.local
+        - name: DBPORT
+          value: "3306"
         - name: BACKGROUND_COLOR
           value: blue
         ports:
