@@ -4,6 +4,8 @@ metadata:
   name: mysql-deployment
   namespace: mysql-namespace
 spec:
+  imagePullSecrets:
+    - name: ecr-secret
   replicas: 1
   selector:
     matchLabels:
