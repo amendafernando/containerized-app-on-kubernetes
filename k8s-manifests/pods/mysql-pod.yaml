@@ -6,9 +6,11 @@ metadata:
   labels:
     app: mysql
 spec:
+  imagePullSecrets:
+    - name: ecr-secret
   containers:
   - name: mysql
-    image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/mysql:0.16
+    image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/mysql:latest
     env:
     - name: MYSQL_ROOT_PASSWORD
       value: mypassword

@@ -6,11 +6,15 @@ metadata:
   labels:
     app: employees
 spec:
+  imagePullSecrets:
+    - name: ecr-secret
   containers:
   - name: webapp
-    image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:0.16
+    image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:latest
     env:
     - name: BACKGROUND_COLOR
       value: blue
+    - name: DBPORT
+      value: "3306"
     ports:
     - containerPort: 8080
