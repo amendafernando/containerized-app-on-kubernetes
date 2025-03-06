@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webapp-replicaset
+  namespace: webapp-namespace
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: employees
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: webapp
+        image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:0.16
+        env:
+        - name: BACKGROUND_COLOR
+          value: blue
+        ports:
+        - containerPort: 8080
