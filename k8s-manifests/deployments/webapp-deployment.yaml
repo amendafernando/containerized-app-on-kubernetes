@@ -19,5 +19,15 @@ spec:
         env:
         - name: BACKGROUND_COLOR
           value: blue
+        - name: DBHOST          # to MySQL service name
+          value: mysql-service.mysql-namespace.svc.cluster.local
+        - name: DBUSER
+          value: root
+        - name: DBPWD
+          value: mypassword
+        - name: DATABASE
+          value: employees
+        - name: DBPORT
+          value: "3306"
         ports:
         - containerPort: 8080
