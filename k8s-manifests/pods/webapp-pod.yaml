@@ -19,9 +19,9 @@ spec:
     - name: DBUSER
       value: "root"                  # MySQL Username
     - name: DBPWD
-      value: "mypassword"            # Your MySQL Password
+      value: "mypassword"            # MySQL Password
     - name: DATABASE
-      value: "employees"             # Your Database Name
+      value: "employees"             # Database Name
     - name: DBPORT
       value: "3306"
     ports:
