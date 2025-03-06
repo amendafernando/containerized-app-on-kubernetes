@@ -15,6 +15,6 @@ spec:
     - name: BACKGROUND_COLOR
       value: blue
     - name: DBPORT
-      value: 3306
+      value: "3306"
     ports:
     - containerPort: 8080
