@@ -13,11 +13,23 @@ spec:
       labels:
         app: employees
     spec:
+      imagePullSecrets:
+      - name: ecr-secret
       containers:
       - name: webapp
-        image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:0.16
+        image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:latest
         env:
+        - name: DBHOST
+          value: mysql-service.mysql-namespace.svc.cluster.local
+        - name: DBPORT
+          value: "3306"
         - name: BACKGROUND_COLOR
           value: blue
+        - name: DBUSER
+          value: "root"
+        - name: DBPWD
+          value: "mypassword" # MySQL password
+        - name: DATABASE
+          value: employees
         ports:
         - containerPort: 8080
