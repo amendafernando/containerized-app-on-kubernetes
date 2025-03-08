@@ -4,9 +4,9 @@ metadata:
   name: mysql-service
   namespace: mysql-namespace
 spec:
-  type: ClusterIP
   selector:
     app: mysql
   ports:
   - port: 3306
     targetPort: 3306
+  type: ClusterIP
