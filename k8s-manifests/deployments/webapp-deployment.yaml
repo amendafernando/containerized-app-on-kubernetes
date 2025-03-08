@@ -19,8 +19,6 @@ spec:
       - name: webapp
         image: 740165692460.dkr.ecr.us-east-1.amazonaws.com/application:latest
         env:
-        - name: BACKGROUND_COLOR
-          value: blue
         - name: DBHOST          # to MySQL service name
           value: mysql-service.mysql-namespace.svc.cluster.local
         - name: DBUSER

@@ -22,6 +22,6 @@ spec:
         - name: MYSQL_ROOT_PASSWORD
           value: mypassword
         - name: MYSQL_DATABASE
-          value: employees # new line   
+          value: employees   
         ports:
         - containerPort: 3306
