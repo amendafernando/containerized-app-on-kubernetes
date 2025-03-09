@@ -14,17 +14,21 @@ kubectl create secret docker-registry ecr-secret \
   --docker-username=AWS \
   --docker-password=$(aws ecr get-login-password --region us-east-1)
 
-# Deploy MySQL Service and Deployment
+# Deploy Mysql pod and service
+kubectl apply -f k8s-manifests/pods/mysql-pod.yaml
 kubectl apply -f k8s-manifests/services/mysql-service.yaml
-kubectl apply -f k8s-manifests/deployments/mysql-deployment.yaml
 
-# Deploy Webapp Service and Deployment
+# Deploy webapp pod and service
+kubectl apply -f k8s-manifests/pods/webapp-pod.yaml
 kubectl apply -f k8s-manifests/services/webapp-service.yaml
-kubectl apply -f k8s-manifests/deployments/webapp-deployment.yaml
 
 # Deploy replicasets
 kubectl apply -f k8s-manifests/replicasets/mysql-replicaset.yaml
 kubectl apply -f k8s-manifests/replicasets/webapp-replicaset.yaml
+
+# Deploy deployments
+kubectl apply -f k8s-manifests/deployments/mysql-deployment.yaml
+kubectl apply -f k8s-manifests/deployments/webapp-deployment.yaml
 
 #verify
 kubectl get all -n mysql-namespace
